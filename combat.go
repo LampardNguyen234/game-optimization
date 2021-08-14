@@ -2,12 +2,19 @@ package main
 
 import (
 	"github.com/LampardNguyen234/game-optimization/character"
-	"github.com/incognitochain/go-incognito-sdk-v2/common"
 	"math"
+	"math/rand"
+	"time"
 )
 
+func RandInt() int {
+	// Use this function for testing-purposes only.
+	rand.Seed(time.Now().UnixNano())
+	return rand.Int()
+}
+
 func Hit(A, B character.Character) {
-	randCritical := common.RandInt() % 100
+	randCritical := RandInt() % 100
 	isCritical := randCritical < A.CriticalRate()
 	criticalRate := 2
 	if !isCritical {

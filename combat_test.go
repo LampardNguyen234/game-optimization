@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/LampardNguyen234/game-optimization/character"
-	"github.com/incognitochain/go-incognito-sdk-v2/common"
 	"log"
 	"testing"
 )
@@ -12,7 +11,7 @@ func TestCombat(t *testing.T) {
 	countA := 0
 
 	for i := 0; i < 100; i+= 1 {
-		isFlipped := (common.RandInt() % 2) == 1
+		isFlipped := (RandInt() % 2) == 1
 		if i % 100 == 0 {
 			log.Printf("TEST COMBAT %v\n", i)
 		}
